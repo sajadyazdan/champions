@@ -1,0 +1,4 @@
+<svg class="modal__toggle-open icon icon-search" width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15.2852 15.7878L19.1639 19.6665" stroke="currentColor" stroke-linecap="round"></path>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M9.16155 17.9923C13.7618 17.9923 17.4911 14.263 17.4911 9.66277C17.4911 5.0625 13.7618 1.33325 9.16155 1.33325C4.56128 1.33325 0.832031 5.0625 0.832031 9.66277C0.832031 14.263 4.56128 17.9923 9.16155 17.9923Z" stroke="currentColor"></path>
+        </svg>
