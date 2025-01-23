@@ -1,35 +1,63 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { Link } from "react-router";
 import { motion } from "motion/react";
-import { ArrowIcon, SearchIcon, CartIcon } from "../../assets/icons";
+import {
+  ArrowIcon,
+  SearchIcon,
+  CartIcon,
+  HamburgerIcon,
+  CloseIcon,
+} from "../../assets/icons";
 
-const menuItems = ["MENS", "WOMENS", "THEMES", "PAGES", "COLLECTIONS"];
+const menuItems = [
+  { id: 1, label: "MENS" },
+  { id: 2, label: "WOMENS" },
+  { id: 3, label: "THEMES" },
+  { id: 4, label: "PAGES" },
+  { id: 5, label: "COLLECTIONS" },
+];
 
-const Header: React.FC = () => {
+interface HeaderProps {
+  setIsMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  isMenuOpen: boolean;
+}
+
+const Header: React.FC<HeaderProps> = ({ isMenuOpen, setIsMenuOpen }) => {
+  const MotionLink = motion(Link);
+  // Prevent scrolling when sidebar is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    // Cleanup on unmount
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isMenuOpen]);
   return (
-    <header className="flex items-center justify-between px-6 py-4 border-b border-gray-200">
+    <header className="flex items-center justify-between h-1/10 px-6 py-4 border-gray-200 flex-shrink-0 relative">
       {/* Left Section: Hamburger Menu */}
       <div className="flex items-center space-x-4">
-        <button className="text-gray-700 focus:outline-none">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            strokeWidth={2}
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M4 6h16M4 12h16M4 18h16"
-            />
-          </svg>
+        <HamburgerIcon className="text-black" />
+        <button
+          className="text-black bg-transparent focus:outline-none"
+          onClick={() => setIsMenuOpen((prevState) => !prevState)}
+        >
+          {isMenuOpen ? (
+            <CloseIcon className="w-6 h-6" />
+          ) : (
+            <HamburgerIcon className="text-black w-6 h-6" />
+          )}
         </button>
 
         {/* Navigation Links */}
         <nav className="hidden md:flex items-center space-x-8 text-sm text-gray-700">
           {menuItems.map((item) => (
-            <motion.a
+            <MotionLink
+              key={item.id}
               href="#"
               className="flex items-center hover:text-black hover:underline"
               initial="initial"
@@ -39,7 +67,7 @@ const Header: React.FC = () => {
                 hover: {},
               }}
             >
-              {item}
+              {item.label}
               <motion.span
                 variants={{
                   initial: { rotate: 0, x: 0 },
@@ -49,7 +77,7 @@ const Header: React.FC = () => {
               >
                 <ArrowIcon className="w-3 h-3 ml-1" />
               </motion.span>
-            </motion.a>
+            </MotionLink>
           ))}
         </nav>
       </div>
@@ -60,7 +88,7 @@ const Header: React.FC = () => {
       </div>
 
       {/* Right Section: Search and Cart */}
-      <div className="flex items-center space-x-4">
+      <div className="flex justify-end	 w-1/3 space-x-4">
         {/* Search Icon */}
         <search className="text-gray-700">
           <div className="relative">
