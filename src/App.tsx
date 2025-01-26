@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <Header isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
-      <Sidebar isMenuOpen={isMenuOpen} />
+      <Sidebar isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
       <h1 className="text-left">This is my Main content</h1>
     </>
   );

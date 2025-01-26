@@ -1,41 +1,86 @@
-import React from "react";
+import React, { useCallback } from "react";
 import { Link } from "react-router";
+import { motion } from "motion/react";
+import { HeartIcon, PersonIcon, ReloadIcon } from "../../assets/icons";
 
 interface SidebarProps {
   isMenuOpen: boolean;
+  setIsMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const sidebarItems = [
-  { id: 1, name: "Home" },
-  { id: 2, name: "Shop" },
-  { id: 3, name: "Men" },
-  { id: 4, name: "Women" },
-  { id: 5, name: "Bestseller" },
-  { id: 6, name: "Blog" },
-  { id: 7, name: "About Us" },
-  { id: 8, name: "Contact" },
+  { id: 1, name: "Home", icon: null, quantity: 0 },
+  { id: 2, name: "Shop", icon: null, quantity: 0 },
+  { id: 3, name: "Men", icon: null, quantity: 0 },
+  { id: 4, name: "Women", icon: null, quantity: 0 },
+  { id: 5, name: "Bestseller", icon: null, quantity: 0 },
+  { id: 6, name: "Blog", icon: null, quantity: 0 },
+  { id: 7, name: "About Us", icon: null, quantity: 0 },
+  { id: 8, name: "Contact", icon: null, quantity: 0 },
+  { id: 9, name: "Wishlist", icon: <HeartIcon />, quantity: 1 },
+  { id: 10, name: "Compare", icon: <ReloadIcon />, quantity: 1 },
 ];
 
-const Sidebar: React.FC<SidebarProps> = ({ isMenuOpen }) => {
+const Sidebar: React.FC<SidebarProps> = ({ isMenuOpen, setIsMenuOpen }) => {
+  const handleMenuClose = useCallback(() => {
+    setIsMenuOpen(false);
+  }, [setIsMenuOpen]);
   if (!isMenuOpen) return null;
   return (
     <>
-      <div className="flex absolute w-full h-full bg-transparent">
-        <aside className="w-1/4 h-full bg-white text-white">
-          <ul className="py-6 text-left">
+      <div
+        className="flex absolute w-full bg-transparent"
+        style={{ height: "calc(100vh - 76px)" }}
+      >
+        <aside className="relative flex flex-col flex-nowrap justify-between text-left w-1/4 h-full bg-white text-white overflow-auto">
+          <ul className="py-6">
             {sidebarItems.map((item) => {
               return (
                 <li
                   key={item.id}
-                  className="my-4 hover:bg-gray-200 px-10 p-2 cursor-pointer"
+                  className="py-4 hover:bg-gray-200 px-10 p-2 cursor-pointer"
                 >
-                  <Link to="/">{item.name}</Link>
+                  <Link to="/" className="relative flex gap-x-1">
+                    {item.icon}
+                    {item.name}
+                    {item.quantity ? (
+                      <span className="absolute bottom-full left-2 h-4 w-4 bg-black text-white text-xs flex items-center justify-center rounded-full">
+                        {item.quantity}
+                      </span>
+                    ) : null}
+                  </Link>
                 </li>
               );
             })}
           </ul>
+          <motion.div
+            className="py-10 px-10"
+            style={{ backgroundColor: "rgba(16,16,16,0.03)" }}
+            initial="initial"
+            whileHover="hover"
+            variants={{
+              initial: {},
+              hover: {},
+            }}
+          >
+            <Link to="/" className="flex items-center gap-x-2">
+              <motion.span
+                variants={{
+                  initial: { scale: 1 },
+                  hover: { scale: 1.2 }, // Rotate and move on hover
+                }}
+                transition={{ duration: 0.3 }}
+              >
+                <PersonIcon />
+              </motion.span>
+              LOG IN
+            </Link>
+          </motion.div>
         </aside>
-        <div className="w-3/4 h-full bg-gray-800  opacity-25"></div>
+        <div
+          className="w-3/4 h-full bg-gray-800  opacity-25"
+          onClick={handleMenuClose}
+        ></div>
       </div>
     </>
   );

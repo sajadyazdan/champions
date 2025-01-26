@@ -38,20 +38,24 @@ const Header: React.FC<HeaderProps> = ({ isMenuOpen, setIsMenuOpen }) => {
     };
   }, [isMenuOpen]);
   return (
-    <header className="flex items-center justify-between h-1/10 px-6 py-4 border-gray-200 flex-shrink-0 relative">
+    <header
+      className="flex items-center justify-between px-6 py-4 border-gray-200 flex-shrink-0 relative"
+      style={{ height: "76px" }}
+    >
       {/* Left Section: Hamburger Menu */}
       <div className="flex items-center space-x-4">
         <HamburgerIcon className="text-black" />
-        <button
-          className="text-black bg-transparent focus:outline-none"
+        <motion.button
+          className="text-black bg-transparent border-none focus:outline-none"
           onClick={() => setIsMenuOpen((prevState) => !prevState)}
+          whileHover={{ scale: 1.1 }}
         >
           {isMenuOpen ? (
-            <CloseIcon className="w-6 h-6" />
+            <CloseIcon className="w-6 h-6 bg-gray-200 rounded-full" />
           ) : (
             <HamburgerIcon className="text-black w-6 h-6" />
           )}
-        </button>
+        </motion.button>
 
         {/* Navigation Links */}
         <nav className="hidden md:flex items-center space-x-8 text-sm text-gray-700">
