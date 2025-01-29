@@ -1,7 +1,13 @@
 import React, { useCallback } from "react";
 import { Link } from "react-router";
 import { motion } from "motion/react";
-import { HeartIcon, PersonIcon, ReloadIcon } from "../../assets/icons";
+import {
+  HeartIcon,
+  PersonIcon,
+  ReloadIcon,
+  FlagIcons,
+} from "../../assets/icons";
+import DropDownMenu from "../SharedComponents/DropDownMenu";
 
 interface SidebarProps {
   isMenuOpen: boolean;
@@ -21,7 +27,17 @@ const sidebarItems = [
   { id: 10, name: "Compare", icon: <ReloadIcon />, quantity: 1 },
 ];
 
+const currencyItems = [
+  { id: 1, label: "USD", icon: <FlagIcons.FlagUS className="h-6 w-6" /> },
+  { id: 2, label: "EUR", icon: <FlagIcons.FlagFR className="h-6 w-6" /> },
+  { id: 3, label: "GBP", icon: <FlagIcons.FlagGB className="h-6 w-6" /> },
+  { id: 4, label: "IND", icon: <FlagIcons.FlagIN className="h-6 w-6" /> },
+];
+
 const Sidebar: React.FC<SidebarProps> = ({ isMenuOpen, setIsMenuOpen }) => {
+  const MotionLink = motion(Link);
+  const [selectedCurrency, setSelectedCurrency] = React.useState(1);
+  const [currencyDropdownOpen, setCurrencyDropdownOpen] = React.useState(false);
   const handleMenuClose = useCallback(() => {
     setIsMenuOpen(false);
   }, [setIsMenuOpen]);
@@ -53,17 +69,20 @@ const Sidebar: React.FC<SidebarProps> = ({ isMenuOpen, setIsMenuOpen }) => {
               );
             })}
           </ul>
-          <motion.div
+          <div
             className="py-10 px-10"
             style={{ backgroundColor: "rgba(16,16,16,0.03)" }}
-            initial="initial"
-            whileHover="hover"
-            variants={{
-              initial: {},
-              hover: {},
-            }}
           >
-            <Link to="/" className="flex items-center gap-x-2">
+            <MotionLink
+              to="/"
+              className="flex items-center gap-x-2"
+              initial="initial"
+              whileHover="hover"
+              variants={{
+                initial: {},
+                hover: {},
+              }}
+            >
               <motion.span
                 variants={{
                   initial: { scale: 1 },
@@ -74,8 +93,16 @@ const Sidebar: React.FC<SidebarProps> = ({ isMenuOpen, setIsMenuOpen }) => {
                 <PersonIcon />
               </motion.span>
               LOG IN
-            </Link>
-          </motion.div>
+            </MotionLink>
+            <DropDownMenu
+              isOpen={currencyDropdownOpen}
+              setItOpen={setCurrencyDropdownOpen}
+              items={currencyItems}
+              buttonStyle="py-10"
+              selectedId={selectedCurrency}
+              setSelectedId={setSelectedCurrency}
+            />
+          </div>
         </aside>
         <div
           className="w-3/4 h-full bg-gray-800  opacity-25"

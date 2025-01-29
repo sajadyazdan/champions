@@ -6,5 +6,6 @@ import CloseIcon from "./close.svg";
 import HeartIcon from "./heart.svg";
 import ReloadIcon from "./reload.svg";
 import PersonIcon from "./person.svg";
+import * as FlagIcons from "./flags"
 
-export { ArrowIcon, SearchIcon, CartIcon, HamburgerIcon, CloseIcon, HeartIcon, ReloadIcon, PersonIcon };
+export { ArrowIcon, SearchIcon, CartIcon, HamburgerIcon, CloseIcon, HeartIcon, ReloadIcon, PersonIcon, FlagIcons };
