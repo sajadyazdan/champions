@@ -12,7 +12,7 @@ interface DropDownMenuProps {
 interface DropDownItem {
   id: number;
   label: string;
-  icon: JSX.Element;
+  icon?: JSX.Element;
 }
 
 const DropDownMenu: React.FC<DropDownMenuProps> = ({
