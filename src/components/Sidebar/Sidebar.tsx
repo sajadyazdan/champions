@@ -31,7 +31,9 @@ const currencyItems = [
   { id: 1, label: "USD", icon: <FlagIcons.FlagUS className="h-6 w-6" /> },
   { id: 2, label: "EUR", icon: <FlagIcons.FlagFR className="h-6 w-6" /> },
   { id: 3, label: "GBP", icon: <FlagIcons.FlagGB className="h-6 w-6" /> },
-  { id: 4, label: "IND", icon: <FlagIcons.FlagIN className="h-6 w-6" /> },
+  { id: 4, label: "EUR", icon: <FlagIcons.FlagDE className="h-6 w-6" /> },
+  { id: 5, label: "EUR", icon: <FlagIcons.FlagES className="h-6 w-6" /> },
+  { id: 6, label: "INR", icon: <FlagIcons.FlagIN className="h-6 w-6" /> },
 ];
 
 const Sidebar: React.FC<SidebarProps> = ({ isMenuOpen, setIsMenuOpen }) => {
