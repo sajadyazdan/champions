@@ -3,8 +3,6 @@ import { ArrowIcon } from "../../assets/icons";
 import { motion } from "motion/react";
 
 interface DropDownMenuProps {
-  isOpen: boolean;
-  setItOpen: React.Dispatch<React.SetStateAction<boolean>>;
   items: DropDownItem[];
   selectedId: number;
   buttonStyle?: string;
@@ -18,13 +16,12 @@ interface DropDownItem {
 }
 
 const DropDownMenu: React.FC<DropDownMenuProps> = ({
-  isOpen,
-  setItOpen,
   items,
   buttonStyle,
   selectedId,
   setSelectedId,
 }) => {
+  const [isOpen, setItOpen] = React.useState(false);
   const selectedItem = items.find(
     (item: DropDownItem) => item.id === selectedId
   );

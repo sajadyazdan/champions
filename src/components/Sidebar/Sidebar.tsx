@@ -39,7 +39,6 @@ const currencyItems = [
 const Sidebar: React.FC<SidebarProps> = ({ isMenuOpen, setIsMenuOpen }) => {
   const MotionLink = motion(Link);
   const [selectedCurrency, setSelectedCurrency] = React.useState(1);
-  const [currencyDropdownOpen, setCurrencyDropdownOpen] = React.useState(false);
   const handleMenuClose = useCallback(() => {
     setIsMenuOpen(false);
   }, [setIsMenuOpen]);
@@ -97,8 +96,6 @@ const Sidebar: React.FC<SidebarProps> = ({ isMenuOpen, setIsMenuOpen }) => {
               LOG IN
             </MotionLink>
             <DropDownMenu
-              isOpen={currencyDropdownOpen}
-              setItOpen={setCurrencyDropdownOpen}
               items={currencyItems}
               buttonStyle="py-10"
               selectedId={selectedCurrency}
