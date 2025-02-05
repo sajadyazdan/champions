@@ -8,6 +8,7 @@ import {
   FlagIcons,
 } from "../../assets/icons";
 import DropDownMenu from "../SharedComponents/DropDownMenu";
+import SocialMedia from "../SocialMedia/SocialMedia";
 
 interface SidebarProps {
   isMenuOpen: boolean;
@@ -115,6 +116,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isMenuOpen, setIsMenuOpen }) => {
               selectedId={selectedLangId}
               setSelectedId={setSelectedLangId}
             />
+            <SocialMedia socialMediaStyles="mt-3" />
           </div>
         </aside>
         <div
