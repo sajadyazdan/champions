@@ -44,7 +44,6 @@ const Header: React.FC<HeaderProps> = ({ isMenuOpen, setIsMenuOpen }) => {
     >
       {/* Left Section: Hamburger Menu */}
       <div className="flex items-center space-x-4">
-        <HamburgerIcon className="text-black" />
         <motion.button
           className="text-black bg-transparent border-none focus:outline-none"
           onClick={() => setIsMenuOpen((prevState) => !prevState)}
@@ -58,12 +57,12 @@ const Header: React.FC<HeaderProps> = ({ isMenuOpen, setIsMenuOpen }) => {
         </motion.button>
 
         {/* Navigation Links */}
-        <nav className="hidden md:flex items-center space-x-8 text-sm text-gray-700">
+        <nav className="hidden min-[990px]:flex flex-wrap items-center text-sm text-gray-700">
           {menuItems.map((item) => (
             <MotionLink
               key={item.id}
               href="#"
-              className="flex items-center hover:text-black hover:underline"
+              className="flex items-center hover:text-black px-4 hover:underline"
               initial="initial"
               whileHover="hover"
               variants={{
