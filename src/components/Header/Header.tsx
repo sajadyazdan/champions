@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router";
 import { motion } from "motion/react";
 import {
   ArrowIcon,
@@ -23,7 +22,6 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ isMenuOpen, setIsMenuOpen }) => {
-  const MotionLink = motion(Link);
   // Prevent scrolling when sidebar is open
   useEffect(() => {
     if (isMenuOpen) {
@@ -59,15 +57,15 @@ const Header: React.FC<HeaderProps> = ({ isMenuOpen, setIsMenuOpen }) => {
         {/* Navigation Links */}
         <nav className="hidden min-[990px]:flex flex-wrap items-center text-sm text-gray-700">
           {menuItems.map((item) => (
-            <MotionLink
+            <motion.div
               key={item.id}
-              href="#"
-              className="flex items-center hover:text-black px-4 hover:underline"
+              className="flex items-center hover:text-black px-4 hover:underline cursor-pointer"
               initial="initial"
               whileHover="hover"
               variants={{
                 initial: {},
                 hover: {},
+                tap: {},
               }}
             >
               {item.label}
@@ -77,10 +75,12 @@ const Header: React.FC<HeaderProps> = ({ isMenuOpen, setIsMenuOpen }) => {
                   hover: { rotate: 180, x: 4 }, // Rotate and move on hover
                 }}
                 transition={{ duration: 0.3 }}
+                // whileHover="hover"
+                // whileTap="tap"
               >
                 <ArrowIcon className="w-3 h-3 ml-1" />
               </motion.span>
-            </MotionLink>
+            </motion.div>
           ))}
         </nav>
       </div>
