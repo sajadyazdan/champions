@@ -35,6 +35,7 @@ const Header: React.FC<HeaderProps> = ({ isMenuOpen, setIsMenuOpen }) => {
       document.body.style.overflow = "";
     };
   }, [isMenuOpen]);
+
   return (
     <header
       className="flex items-center justify-between px-6 py-4 border-gray-200 flex-shrink-0 relative"

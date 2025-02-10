@@ -51,11 +51,13 @@ const Sidebar: React.FC<SidebarProps> = ({ isMenuOpen, setIsMenuOpen }) => {
   const handleMenuClose = useCallback(() => {
     setIsMenuOpen(false);
   }, [setIsMenuOpen]);
+
   if (!isMenuOpen) return null;
+
   return (
     <>
       <div
-        className="flex absolute w-full bg-transparent"
+        className="flex absolute z-30 w-full bg-transparent"
         style={{ height: "calc(100vh - 76px)" }}
       >
         <aside className="relative flex flex-col flex-nowrap justify-between text-left w-1/4 h-full bg-white text-white overflow-auto">
