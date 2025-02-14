@@ -35,6 +35,14 @@ const MainPage: React.FC = () => {
           </p>
         </div>
       </div>
+      <div className="relative w-full flex justify-center items-center py-16 bg-[#efefef]">
+        <div className="flex flex-col justify-center items-center text-center space-y-4 max-w-3xl">
+          <p className="break-words">
+            Share information about your brand with your customers. Describe a
+            product, make announcements, or welcome customers to your store.
+          </p>
+        </div>
+      </div>
     </>
   );
 };
