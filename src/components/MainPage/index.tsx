@@ -31,7 +31,7 @@ const MainPage: React.FC = () => {
           <p className="break-words">
             Discover a world of uniqueness with our collection of limited
             clothing, where each piece is a unique expression of style and
-            individuality, you won't find anywhere else.
+            individuality, you will not find anywhere else.
           </p>
         </div>
       </div>
