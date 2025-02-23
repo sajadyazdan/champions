@@ -9,6 +9,7 @@ import {
 } from "../../assets/icons";
 import DropDownMenu from "../SharedComponents/DropDownMenu";
 import SocialMedia from "../SocialMedia/SocialMedia";
+import LanguageDropdownMenu from "../LanguageDropdownMenu/LanguageDropdownMenu";
 
 interface SidebarProps {
   isMenuOpen: boolean;
@@ -37,17 +38,9 @@ const currencyItems = [
   { id: 6, label: "INR", icon: <FlagIcons.FlagIN className="h-6 w-6" /> },
 ];
 
-const languageItems = [
-  { id: 1, label: "English" },
-  { id: 2, label: "Français" },
-  { id: 3, label: "Español" },
-  { id: 4, label: "Deutsch" },
-];
-
 const Sidebar: React.FC<SidebarProps> = ({ isMenuOpen, setIsMenuOpen }) => {
   const MotionLink = motion(Link);
   const [selectedCurrency, setSelectedCurrency] = React.useState(1);
-  const [selectedLangId, setSelectedLangId] = React.useState(1);
   const handleMenuClose = useCallback(() => {
     setIsMenuOpen(false);
   }, [setIsMenuOpen]);
@@ -112,12 +105,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isMenuOpen, setIsMenuOpen }) => {
               selectedId={selectedCurrency}
               setSelectedId={setSelectedCurrency}
             />
-            <DropDownMenu
-              items={languageItems}
-              buttonStyle="pt-5"
-              selectedId={selectedLangId}
-              setSelectedId={setSelectedLangId}
-            />
+            <LanguageDropdownMenu buttonStyle="pt-5" />
             <SocialMedia socialMediaStyles="mt-3" />
           </div>
         </aside>
