@@ -1,15 +1,10 @@
 import React, { useCallback } from "react";
 import { Link } from "react-router";
 import { motion } from "motion/react";
-import {
-  HeartIcon,
-  PersonIcon,
-  ReloadIcon,
-  FlagIcons,
-} from "../../assets/icons";
-import DropDownMenu from "../SharedComponents/DropDownMenu";
+import { HeartIcon, PersonIcon, ReloadIcon } from "../../assets/icons";
 import SocialMedia from "../SocialMedia/SocialMedia";
 import LanguageDropdownMenu from "../LanguageDropdownMenu/LanguageDropdownMenu";
+import CurrencyDropwdownMenu from "../CurrencyDropdownMenu/CurrentcyDropdownMenu";
 
 interface SidebarProps {
   isMenuOpen: boolean;
@@ -29,18 +24,8 @@ const sidebarItems = [
   { id: 10, name: "Compare", icon: <ReloadIcon />, quantity: 1 },
 ];
 
-const currencyItems = [
-  { id: 1, label: "USD", icon: <FlagIcons.FlagUS className="h-6 w-6" /> },
-  { id: 2, label: "EUR", icon: <FlagIcons.FlagFR className="h-6 w-6" /> },
-  { id: 3, label: "GBP", icon: <FlagIcons.FlagGB className="h-6 w-6" /> },
-  { id: 4, label: "EUR", icon: <FlagIcons.FlagDE className="h-6 w-6" /> },
-  { id: 5, label: "EUR", icon: <FlagIcons.FlagES className="h-6 w-6" /> },
-  { id: 6, label: "INR", icon: <FlagIcons.FlagIN className="h-6 w-6" /> },
-];
-
 const Sidebar: React.FC<SidebarProps> = ({ isMenuOpen, setIsMenuOpen }) => {
   const MotionLink = motion(Link);
-  const [selectedCurrency, setSelectedCurrency] = React.useState(1);
   const handleMenuClose = useCallback(() => {
     setIsMenuOpen(false);
   }, [setIsMenuOpen]);
@@ -99,12 +84,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isMenuOpen, setIsMenuOpen }) => {
               </motion.span>
               LOG IN
             </MotionLink>
-            <DropDownMenu
-              items={currencyItems}
-              buttonStyle="pt-10"
-              selectedId={selectedCurrency}
-              setSelectedId={setSelectedCurrency}
-            />
+            <CurrencyDropwdownMenu buttonStyle="pt-10" />
             <LanguageDropdownMenu buttonStyle="pt-5" />
             <SocialMedia socialMediaStyles="mt-3" />
           </div>

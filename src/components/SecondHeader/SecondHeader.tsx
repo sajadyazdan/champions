@@ -1,3 +1,4 @@
+import CurrencyDropwdownMenu from "../CurrencyDropdownMenu/CurrentcyDropdownMenu";
 import LanguageDropdownMenu from "../LanguageDropdownMenu/LanguageDropdownMenu";
 import SocialMedia from "../SocialMedia/SocialMedia";
 
@@ -11,7 +12,8 @@ const SecondHeader: React.FC = () => {
         <SocialMedia />
       </div>
       <div>Central text</div>
-      <div>
+      <div className="flex space-x-4">
+        <CurrencyDropwdownMenu />
         <LanguageDropdownMenu />
       </div>
     </header>
