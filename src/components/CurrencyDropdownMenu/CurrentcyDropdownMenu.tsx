@@ -3,6 +3,7 @@ import { FlagIcons } from "../../assets/icons";
 import DropDownMenu from "../SharedComponents/DropDownMenu";
 interface ButtonStyle {
   buttonStyle?: string;
+  downwardDirection?: boolean;
 }
 const currencyItems = [
   { id: 1, label: "USD", icon: <FlagIcons.FlagUS className="h-6 w-6" /> },
@@ -13,7 +14,10 @@ const currencyItems = [
   { id: 6, label: "INR", icon: <FlagIcons.FlagIN className="h-6 w-6" /> },
 ];
 
-const CurrencyDropwdownMenu: React.FC<ButtonStyle> = ({ buttonStyle }) => {
+const CurrencyDropwdownMenu: React.FC<ButtonStyle> = ({
+  buttonStyle,
+  downwardDirection,
+}) => {
   const [selectedCurrency, setSelectedCurrency] = useState(1);
   return (
     <DropDownMenu
@@ -21,6 +25,7 @@ const CurrencyDropwdownMenu: React.FC<ButtonStyle> = ({ buttonStyle }) => {
       buttonStyle={buttonStyle}
       selectedId={selectedCurrency}
       setSelectedId={setSelectedCurrency}
+      downwardDirection={downwardDirection}
     />
   );
 };

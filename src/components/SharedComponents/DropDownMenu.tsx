@@ -7,6 +7,7 @@ interface DropDownMenuProps {
   selectedId: number;
   buttonStyle?: string;
   setSelectedId: React.Dispatch<React.SetStateAction<number>>;
+  downwardDirection?: boolean;
 }
 
 interface DropDownItem {
@@ -20,6 +21,7 @@ const DropDownMenu: React.FC<DropDownMenuProps> = ({
   buttonStyle,
   selectedId,
   setSelectedId,
+  downwardDirection,
 }) => {
   const [isOpen, setItOpen] = React.useState(false);
   const selectedItem = items.find(
@@ -35,6 +37,7 @@ const DropDownMenu: React.FC<DropDownMenuProps> = ({
     },
     [setSelectedId]
   );
+  const verticalDirectionStyle = downwardDirection ? "top-3/4" : "bottom-3/4";
   return (
     <motion.button
       className={`flex text-left flex-start w-full relative text-black bg-transparent border-none px-0 focus:outline-none ${buttonStyle}`}
@@ -53,7 +56,9 @@ const DropDownMenu: React.FC<DropDownMenuProps> = ({
         </motion.span>
       </span>
       {isOpen && (
-        <div className={`absolute bottom-3/4 border border-2 bg-white`}>
+        <div
+          className={`absolute ${verticalDirectionStyle} border border-2 bg-white z-40`}
+        >
           <ul className="flex flex-col items-start">
             {isOpen &&
               items.map((item: DropDownItem) => (

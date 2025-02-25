@@ -13,8 +13,8 @@ const SecondHeader: React.FC = () => {
       </div>
       <div>Central text</div>
       <div className="flex space-x-4">
-        <CurrencyDropwdownMenu />
-        <LanguageDropdownMenu />
+        <CurrencyDropwdownMenu downwardDirection />
+        <LanguageDropdownMenu downwardDirection />
       </div>
     </header>
   );

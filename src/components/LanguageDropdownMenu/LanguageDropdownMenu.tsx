@@ -10,9 +10,13 @@ const languageItems = [
 
 interface ButtonStyle {
   buttonStyle?: string;
+  downwardDirection?: boolean;
 }
 
-const LanguageDropdownMenu: React.FC<ButtonStyle> = ({ buttonStyle }) => {
+const LanguageDropdownMenu: React.FC<ButtonStyle> = ({
+  buttonStyle,
+  downwardDirection,
+}) => {
   const [selectedLangId, setSelectedLangId] = useState(1);
   return (
     <DropDownMenu
@@ -20,6 +24,7 @@ const LanguageDropdownMenu: React.FC<ButtonStyle> = ({ buttonStyle }) => {
       buttonStyle={buttonStyle}
       selectedId={selectedLangId}
       setSelectedId={setSelectedLangId}
+      downwardDirection={downwardDirection}
     />
   );
 };
