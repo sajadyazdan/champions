@@ -11,7 +11,7 @@ const SecondHeader: React.FC = () => {
       <div>
         <SocialMedia />
       </div>
-      <div>Central text</div>
+      <div className="text-xs">WELCOME TO OUR STORE</div>
       <div className="flex space-x-4">
         <CurrencyDropwdownMenu downwardDirection />
         <LanguageDropdownMenu downwardDirection />
