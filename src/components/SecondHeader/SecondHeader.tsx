@@ -27,11 +27,16 @@ const SecondHeader: React.FC = () => {
       <div>
         <SocialMedia />
       </div>
-      <div className="flex text-xs">
-        <ArrowIcon className="w-4 h-4 rotate-90" onClick={handleLeftArrow} />{" "}
-        <div className="px-36 w-lg">{dynamicTexts[textIndex]}</div>
+      <div className="flex w-1/2 justify-center text-xs">
         <ArrowIcon
-          className="w-4 h-4 -rotate-90"
+          className="w-4 h-4 rotate-90 cursor-pointer"
+          onClick={handleLeftArrow}
+        />{" "}
+        <div className="w-2/3">
+          <div>{dynamicTexts[textIndex]}</div>
+        </div>
+        <ArrowIcon
+          className="w-4 h-4 -rotate-90 cursor-pointer"
           onClick={handleRightArrow}
         />{" "}
       </div>
