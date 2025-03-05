@@ -21,13 +21,13 @@ const SecondHeader: React.FC = () => {
       const nextItem = wrap(0, dynamicTexts.length, textIndex + newDirection);
       console.log(newDirection);
       setTextIndex(nextItem);
-      setDirection(newDirection);
     },
     [textIndex]
   );
 
   const handleLeftArrowOnClick = useCallback(() => setSlide(-1), [setSlide]);
   const handleRightArrowOnClick = useCallback(() => setSlide(1), [setSlide]);
+  console.log(direction);
 
   return (
     <header
@@ -41,6 +41,7 @@ const SecondHeader: React.FC = () => {
         <ArrowIcon
           className="w-4 h-4 rotate-90 cursor-pointer"
           onClick={handleLeftArrowOnClick}
+          onMouseEnter={() => setDirection(-1)}
         />
         <SecondHeaderTextSlideShow
           direction={direction}
@@ -49,6 +50,7 @@ const SecondHeader: React.FC = () => {
         <ArrowIcon
           className="w-4 h-4 -rotate-90 cursor-pointer"
           onClick={handleRightArrowOnClick}
+          onMouseEnter={() => setDirection(1)}
         />
       </div>
       <div className="flex space-x-4">
