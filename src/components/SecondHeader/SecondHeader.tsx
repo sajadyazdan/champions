@@ -34,10 +34,10 @@ const SecondHeader: React.FC = () => {
       className="flex items-center justify-between px-6 py-4 border-gray-200 flex-shrink-0 relative"
       style={{ height: "40px", backgroundColor: "rgba(16,16,16,0.03)" }}
     >
-      <div>
+      <div className="hidden md:flex">
         <SocialMedia />
       </div>
-      <div className="flex w-1/2 justify-center text-xs">
+      <div className="flex w-full md:w-1/2 justify-center text-xs">
         <ArrowIcon
           className="w-4 h-4 rotate-90 cursor-pointer"
           onClick={handleLeftArrowOnClick}
@@ -53,7 +53,7 @@ const SecondHeader: React.FC = () => {
           onMouseEnter={() => setDirection(1)}
         />
       </div>
-      <div className="flex space-x-4">
+      <div className="hidden md:flex space-x-4">
         <CurrencyDropwdownMenu downwardDirection />
         <LanguageDropdownMenu downwardDirection />
       </div>
