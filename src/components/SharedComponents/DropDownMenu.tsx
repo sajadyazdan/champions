@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useEffect, useRef } from "react";
 import { ArrowIcon } from "../../assets/icons";
 import { motion } from "motion/react";
 
@@ -23,13 +23,34 @@ const DropDownMenu: React.FC<DropDownMenuProps> = ({
   setSelectedId,
   downwardDirection,
 }) => {
-  const [isOpen, setItOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = React.useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  // Function to handle clicks outside the dropdown
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setIsOpen(false);
+      }
+    };
+
+    // Add event listener
+    document.addEventListener("mousedown", handleClickOutside);
+
+    // Cleanup event listener on component unmount
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
   const selectedItem = items.find(
     (item: DropDownItem) => item.id === selectedId
   );
   const handleClick = useCallback(
-    () => setItOpen((prevState) => !prevState),
-    [setItOpen]
+    () => setIsOpen((prevState) => !prevState),
+    [setIsOpen]
   );
   const handleSelection = useCallback(
     (id: number) => {
@@ -57,6 +78,7 @@ const DropDownMenu: React.FC<DropDownMenuProps> = ({
       </span>
       {isOpen && (
         <div
+          ref={dropdownRef}
           className={`absolute ${verticalDirectionStyle} border border-2 bg-white z-40`}
         >
           <ul className="flex flex-col items-start">
