@@ -60,9 +60,10 @@ const DropDownMenu: React.FC<DropDownMenuProps> = ({
   );
   const verticalDirectionStyle = downwardDirection ? "top-3/4" : "bottom-3/4";
   return (
-    <motion.button
-      className={`flex text-left flex-start w-full relative text-black bg-transparent border-none px-0 focus:outline-none ${buttonStyle}`}
+    <motion.div
+      className={`flex text-left flex-start w-full relative text-black bg-transparent border-none px-0 focus:outline-none ${buttonStyle} cursor-pointer`}
       onClick={handleClick}
+      ref={dropdownRef}
     >
       <span className="flex gap-x-1">
         {selectedItem?.icon}
@@ -78,7 +79,6 @@ const DropDownMenu: React.FC<DropDownMenuProps> = ({
       </span>
       {isOpen && (
         <div
-          ref={dropdownRef}
           className={`absolute ${verticalDirectionStyle} border border-2 bg-white z-40`}
         >
           <ul className="flex flex-col items-start">
@@ -96,7 +96,7 @@ const DropDownMenu: React.FC<DropDownMenuProps> = ({
           </ul>
         </div>
       )}
-    </motion.button>
+    </motion.div>
   );
 };
 

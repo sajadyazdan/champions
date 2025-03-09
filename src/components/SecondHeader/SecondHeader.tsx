@@ -26,7 +26,6 @@ const SecondHeader: React.FC = () => {
 
   const handleLeftArrowOnClick = useCallback(() => setSlide(-1), [setSlide]);
   const handleRightArrowOnClick = useCallback(() => setSlide(1), [setSlide]);
-  console.log(direction);
 
   return (
     <header
