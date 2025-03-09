@@ -19,7 +19,6 @@ const SecondHeader: React.FC = () => {
   const setSlide = useCallback(
     (newDirection: 1 | -1) => {
       const nextItem = wrap(0, dynamicTexts.length, textIndex + newDirection);
-      console.log(newDirection);
       setTextIndex(nextItem);
     },
     [textIndex]
