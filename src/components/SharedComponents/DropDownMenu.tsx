@@ -58,7 +58,8 @@ const DropDownMenu: React.FC<DropDownMenuProps> = ({
     },
     [setSelectedId]
   );
-  const verticalDirectionStyle = downwardDirection ? "top-3/4" : "bottom-3/4";
+  const verticalDirectionStyle = downwardDirection ? "top-full" : "bottom-1/2";
+  const horizontalDirection = downwardDirection ? "-right-5" : "-left-2";
   return (
     <motion.div
       className={`flex text-left flex-start w-full relative text-black bg-transparent border-none px-0 focus:outline-none ${buttonStyle} cursor-pointer`}
@@ -79,7 +80,7 @@ const DropDownMenu: React.FC<DropDownMenuProps> = ({
       </span>
       {isOpen && (
         <div
-          className={`absolute ${verticalDirectionStyle} border border-2 bg-white z-40`}
+          className={`absolute ${verticalDirectionStyle} ${horizontalDirection} border border-2 bg-white z-40`}
         >
           <ul className="flex flex-col items-start">
             {isOpen &&
