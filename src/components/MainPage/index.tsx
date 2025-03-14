@@ -45,6 +45,11 @@ const MainPage: React.FC = () => {
           </p>
         </div>
       </div>
+      <div className="relative w-full flex justify-center items-center py-16 bg-[#efefef]">
+        <div className="flex flex-col justify-center items-center text-center space-y-4 max-w-3xl">
+          <h1 className="break-words">Discover what's new</h1>
+        </div>
+      </div>
     </>
   );
 };
