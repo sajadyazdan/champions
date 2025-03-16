@@ -37,17 +37,17 @@ const MainPage: React.FC = () => {
           </p>
         </div>
       </div>
+      <div className="relative w-full flex py-16 bg-white">
+        <div className="flex flex-col justify-center items-center text-left space-y-4 max-w-3xl">
+          <h2 className="text-3xl">Discover what's new</h2>
+        </div>
+      </div>
       <div className="relative w-full flex justify-center items-center py-16 bg-[#efefef]">
         <div className="flex flex-col justify-center items-center text-center space-y-4 max-w-3xl">
           <p className="break-words">
             Share information about your brand with your customers. Describe a
             product, make announcements, or welcome customers to your store.
           </p>
-        </div>
-      </div>
-      <div className="relative w-full flex justify-center items-center py-16 bg-[#efefef]">
-        <div className="flex flex-col justify-center items-center text-center space-y-4 max-w-3xl">
-          <h1 className="break-words">Discover what's new</h1>
         </div>
       </div>
     </>
