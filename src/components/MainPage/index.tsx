@@ -40,6 +40,12 @@ const MainPage: React.FC = () => {
       <div className="relative w-full flex py-16 bg-white">
         <div className="flex flex-col justify-center items-center text-left space-y-4 max-w-3xl">
           <h2 className="text-3xl">Discover what's new</h2>
+          <div className="flex space-x-2">
+            <img src="./images/product-1-1.webp"></img>
+            <img src="./images/product-2-1.webp"></img>
+            <img src="./images/product-3-1.webp"></img>
+            <img src="./images/product-4-1.webp"></img>
+          </div>
         </div>
       </div>
       <div className="relative w-full flex justify-center items-center py-16 bg-[#efefef]">
