@@ -2,6 +2,12 @@ import React from "react";
 import NewsTicker from "../NewsTicker/NewsTicker";
 
 const MainPage: React.FC = () => {
+  const imageSources = [
+    { src: "./images/product-1-1.webp", alt: "product-1-1" },
+    { src: "./images/product-2-1.webp", alt: "product-2-1" },
+    { src: "./images/product-3-1.webp", alt: "product-3-1" },
+    { src: "./images/product-4-1.webp", alt: "product-4-1" },
+  ];
   return (
     <>
       <div className="relative w-full h-full">
@@ -38,13 +44,19 @@ const MainPage: React.FC = () => {
         </div>
       </div>
       <div className="relative w-full flex py-16 bg-white">
-        <div className="flex flex-col justify-center items-center text-left space-y-4 max-w-3xl">
-          <h2 className="text-3xl">Discover what's new</h2>
-          <div className="flex space-x-2">
-            <img src="./images/product-1-1.webp"></img>
-            <img src="./images/product-2-1.webp"></img>
-            <img src="./images/product-3-1.webp"></img>
-            <img src="./images/product-4-1.webp"></img>
+        <div className="flex flex-col text-left space-y-4">
+          <h2 className="text-3xl pl-4 pb-4">Discover what's new</h2>
+          <div className="flex w-full justify-between box-border">
+            {imageSources.map((imageSource) => {
+              return (
+                <div
+                  key={imageSource.alt}
+                  className="flex-grow flex justify-center px-1 w-1/4"
+                >
+                  <img src={imageSource.src} alt={imageSource.alt} />
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
