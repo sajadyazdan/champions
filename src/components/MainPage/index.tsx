@@ -51,9 +51,10 @@ const MainPage: React.FC = () => {
               return (
                 <div
                   key={imageSource.alt}
-                  className="flex-grow flex justify-center px-1 w-1/4"
+                  className="flex-grow flex flex-col justify-center px-1 w-1/4"
                 >
                   <img src={imageSource.src} alt={imageSource.alt} />
+                  <p className="pt-4 text-sm">OVERSIZED TEE - BLACK</p>
                 </div>
               );
             })}
