@@ -15,7 +15,7 @@ const MainPage: React.FC = () => {
           <img
             src="./images/main-image.webp"
             alt="Description of image"
-            className="w-full h-full object-cover"
+            className="w-full aspect-auto object-cover"
           />
         </div>
         <div className="absolute z-20 w-full h-full flex flex-col items-center justify-center space-x-4 flex-row">
