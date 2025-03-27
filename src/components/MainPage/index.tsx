@@ -9,8 +9,8 @@ const MainPage: React.FC = () => {
     { src: "./images/product-4-1.webp", alt: "product-4-1" },
   ];
   return (
-    <>
-      <div className="relative w-full">
+    <main>
+      <section className="relative w-full">
         <div className="relative z-10 w-full h-full">
           <img
             src="./images/main-image.webp"
@@ -31,9 +31,9 @@ const MainPage: React.FC = () => {
             </div>
           </div>
         </div>
-      </div>
+      </section>
       <NewsTicker />
-      <div className="relative w-full flex justify-center items-center py-16">
+      <section className="relative w-full flex justify-center items-center py-16">
         <div className="flex flex-col justify-center items-center text-center space-y-4 max-w-3xl">
           <p className="break-words">"CELEBRATE" AN ERA OF EXCLUSIVE LUXURY</p>
           <p className="break-words">
@@ -42,34 +42,34 @@ const MainPage: React.FC = () => {
             individuality, you will not find anywhere else.
           </p>
         </div>
-      </div>
-      <div className="relative w-full flex py-16 bg-white">
+      </section>
+      <section className="relative w-full flex py-16 bg-white">
         <div className="flex flex-col text-left space-y-4">
           <h2 className="text-3xl pl-4 pb-4">Discover what's new</h2>
           <div className="flex w-full justify-between box-border">
             {imageSources.map((imageSource) => {
               return (
-                <div
+                <article
                   key={imageSource.alt}
                   className="flex-grow flex flex-col justify-center px-1 w-1/4"
                 >
                   <img src={imageSource.src} alt={imageSource.alt} />
                   <p className="pt-4 text-sm">OVERSIZED TEE - BLACK</p>
-                </div>
+                </article>
               );
             })}
           </div>
         </div>
-      </div>
-      <div className="relative w-full flex justify-center items-center py-16 bg-[#efefef]">
+      </section>
+      <section className="relative w-full flex justify-center items-center py-16 bg-[#efefef]">
         <div className="flex flex-col justify-center items-center text-center space-y-4 max-w-3xl">
           <p className="break-words">
             Share information about your brand with your customers. Describe a
             product, make announcements, or welcome customers to your store.
           </p>
         </div>
-      </div>
-    </>
+      </section>
+    </main>
   );
 };
 
