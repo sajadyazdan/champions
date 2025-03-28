@@ -3,10 +3,34 @@ import NewsTicker from "../NewsTicker/NewsTicker";
 
 const MainPage: React.FC = () => {
   const imageSources = [
-    { src: "./images/product-1-1.webp", alt: "product-1-1" },
-    { src: "./images/product-2-1.webp", alt: "product-2-1" },
-    { src: "./images/product-3-1.webp", alt: "product-3-1" },
-    { src: "./images/product-4-1.webp", alt: "product-4-1" },
+    {
+      src: "./images/product-1-1.webp",
+      alt: "product-1-1",
+      price: 25.0,
+      discount: 10,
+      title: "OVERSIZED TEE - BLACK",
+    },
+    {
+      src: "./images/product-2-1.webp",
+      alt: "product-2-1",
+      price: 30.0,
+      discount: 0,
+      title: "PURE COTTON HEAVYWEIGHT T-SHIRT",
+    },
+    {
+      src: "./images/product-3-1.webp",
+      alt: "product-3-1",
+      price: 20.0,
+      discount: 5,
+      title: "OVERSIZED TEE - PEARL PINK",
+    },
+    {
+      src: "./images/product-4-1.webp",
+      alt: "product-4-1",
+      price: 40.0,
+      discount: 20,
+      title: "LOOSE FIT CREW-NECK COTTON T-SHIRT",
+    },
   ];
   return (
     <main>
@@ -43,9 +67,9 @@ const MainPage: React.FC = () => {
           </p>
         </div>
       </section>
-      <section className="relative w-full flex py-16 bg-white">
+      <section className="relative w-full flex pb-8 px-8 bg-white">
         <div className="flex flex-col text-left space-y-4">
-          <h2 className="text-3xl pl-4 pb-4">Discover what's new</h2>
+          <h2 className="text-3xl pb-4">Discover what's new</h2>
           <div className="flex w-full justify-between box-border">
             {imageSources.map((imageSource) => {
               return (
@@ -54,7 +78,25 @@ const MainPage: React.FC = () => {
                   className="flex-grow flex flex-col justify-center px-1 w-1/4"
                 >
                   <img src={imageSource.src} alt={imageSource.alt} />
-                  <p className="pt-4 text-sm">OVERSIZED TEE - BLACK</p>
+                  <p className="pt-4 text-sm">{imageSource.title}</p>
+                  <p
+                    className="inline pt-2 text-sm"
+                    style={{ display: "inline" }}
+                  >
+                    <span className="pr-1">
+                      From $
+                      {(
+                        imageSource.price -
+                        (imageSource.price * imageSource.discount) / 100
+                      ).toFixed(2)}
+                    </span>
+                    {Boolean(imageSource.discount) && (
+                      <span className="line-through">
+                        {" "}
+                        ${imageSource.price}
+                      </span>
+                    )}
+                  </p>{" "}
                 </article>
               );
             })}
