@@ -97,6 +97,10 @@ const MainPage: React.FC = () => {
                       </span>
                     )}
                   </p>{" "}
+                  <ul className="flex flex-row space-x-1">
+                    <li className="w-6 h-6 bg-black rounded-full border-4 border-gray-200 cursor-pointer"></li>
+                    <li className="w-6 h-6 bg-black rounded-full border-4 border-gray-200 cursor-pointer"></li>
+                  </ul>
                 </article>
               );
             })}
