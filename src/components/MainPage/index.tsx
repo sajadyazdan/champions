@@ -1,5 +1,7 @@
 import React from "react";
 import NewsTicker from "../NewsTicker/NewsTicker";
+import ColorPicker from "../SharedComponents/ColorPicker";
+import { Color } from "../../constants";
 
 const MainPage: React.FC = () => {
   const imageSources = [
@@ -9,6 +11,7 @@ const MainPage: React.FC = () => {
       price: 25.0,
       discount: 10,
       title: "OVERSIZED TEE - BLACK",
+      colorList: [Color.BLACK, Color.BEIGE, Color.GREY, Color.PEARL_PINK],
     },
     {
       src: "./images/product-2-1.webp",
@@ -16,6 +19,7 @@ const MainPage: React.FC = () => {
       price: 30.0,
       discount: 0,
       title: "PURE COTTON HEAVYWEIGHT T-SHIRT",
+      colorList: [Color.BEIGE],
     },
     {
       src: "./images/product-3-1.webp",
@@ -23,6 +27,7 @@ const MainPage: React.FC = () => {
       price: 20.0,
       discount: 5,
       title: "OVERSIZED TEE - PEARL PINK",
+      colorList: [Color.PEARL_PINK, Color.BROWN],
     },
     {
       src: "./images/product-4-1.webp",
@@ -30,6 +35,7 @@ const MainPage: React.FC = () => {
       price: 40.0,
       discount: 20,
       title: "LOOSE FIT CREW-NECK COTTON T-SHIRT",
+      colorList: [Color.GREY, Color.PINK],
     },
   ];
   return (
@@ -97,10 +103,7 @@ const MainPage: React.FC = () => {
                       </span>
                     )}
                   </p>{" "}
-                  <ul className="flex flex-row space-x-1">
-                    <li className="w-6 h-6 bg-black rounded-full border-4 border-gray-200 cursor-pointer"></li>
-                    <li className="w-6 h-6 bg-black rounded-full border-4 border-gray-200 cursor-pointer"></li>
-                  </ul>
+                  <ColorPicker colorList={imageSource.colorList} />
                 </article>
               );
             })}
