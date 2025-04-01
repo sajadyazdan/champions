@@ -10,10 +10,13 @@ const ColorPicker: React.FC<IProps> = ({ colorList }) => {
     <ul className="flex flex-row space-x-1">
       {colorList.map((color) => {
         return (
-          <li
-            className="w-6 h-6 rounded-full border-4 border-gray-200 cursor-pointer"
-            style={{ backgroundColor: colorMap[color] }}
-          ></li>
+          <li className="relative flex w-6 h-6 justify-center items-center">
+            <div
+              className="relative w-4 h-4 rounded-full"
+              style={{ backgroundColor: colorMap[color] }}
+            ></div>
+            <div className="absolute bg-transparent inset-0 w-full h-full rounded-full border-2 border-gray hover:border-black cursor-pointer"></div>
+          </li>
         );
       })}
     </ul>
