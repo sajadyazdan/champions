@@ -1,43 +1,8 @@
 import React from "react";
 import NewsTicker from "../NewsTicker/NewsTicker";
-import ColorPicker from "../SharedComponents/ColorPicker";
-import { Color } from "../../constants";
+import DiscoverSection from "./Components/DiscoverSection";
 
 const MainPage: React.FC = () => {
-  const imageSources = [
-    {
-      src: "./images/product-1-1.webp",
-      alt: "product-1-1",
-      price: 25.0,
-      discount: 10,
-      title: "OVERSIZED TEE - BLACK",
-      colorList: [Color.BLACK, Color.BEIGE, Color.GREY, Color.PEARL_PINK],
-    },
-    {
-      src: "./images/product-2-1.webp",
-      alt: "product-2-1",
-      price: 30.0,
-      discount: 0,
-      title: "PURE COTTON HEAVYWEIGHT T-SHIRT",
-      colorList: [Color.BEIGE],
-    },
-    {
-      src: "./images/product-3-1.webp",
-      alt: "product-3-1",
-      price: 20.0,
-      discount: 5,
-      title: "OVERSIZED TEE - PEARL PINK",
-      colorList: [Color.PEARL_PINK, Color.BROWN],
-    },
-    {
-      src: "./images/product-4-1.webp",
-      alt: "product-4-1",
-      price: 40.0,
-      discount: 20,
-      title: "LOOSE FIT CREW-NECK COTTON T-SHIRT",
-      colorList: [Color.GREY, Color.PINK],
-    },
-  ];
   return (
     <main>
       <section className="relative w-full">
@@ -73,43 +38,7 @@ const MainPage: React.FC = () => {
           </p>
         </div>
       </section>
-      <section className="relative w-full flex pb-8 px-8 bg-white">
-        <div className="flex flex-col text-left space-y-4">
-          <h2 className="text-3xl pb-4">Discover what's new</h2>
-          <div className="flex w-full justify-between box-border">
-            {imageSources.map((imageSource) => {
-              return (
-                <article
-                  key={imageSource.alt}
-                  className="flex-grow flex flex-col justify-center px-1 w-1/4"
-                >
-                  <img src={imageSource.src} alt={imageSource.alt} />
-                  <p className="pt-4 text-sm">{imageSource.title}</p>
-                  <p
-                    className="inline pt-2 text-sm"
-                    style={{ display: "inline" }}
-                  >
-                    <span className="pr-1">
-                      From $
-                      {(
-                        imageSource.price -
-                        (imageSource.price * imageSource.discount) / 100
-                      ).toFixed(2)}
-                    </span>
-                    {Boolean(imageSource.discount) && (
-                      <span className="line-through">
-                        {" "}
-                        ${imageSource.price}
-                      </span>
-                    )}
-                  </p>{" "}
-                  <ColorPicker colorList={imageSource.colorList} />
-                </article>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+      <DiscoverSection />
       <section className="relative w-full flex justify-center items-center py-16 bg-[#efefef]">
         <div className="flex flex-col justify-center items-center text-center space-y-4 max-w-3xl">
           <p className="break-words">
