@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion } from "framer-motion"; // Import framer-motion
 import { Color } from "../../../constants";
 import ColorPicker from "../../SharedComponents/ColorPicker";
 
@@ -60,11 +61,17 @@ const DiscoverSection = () => {
                 onMouseEnter={() => setFocusIndex(item.id)}
                 onMouseLeave={() => setFocusIndex(-1)}
               >
-                <img
-                  className="cursor-pointer"
-                  src={item.id === focusIndex ? item.srcFocus : item.src}
-                  alt={item.alt}
-                />
+                <div className="relative w-full h-auto overflow-hidden">
+                  {" "}
+                  {/* Add container with overflow hidden */}
+                  <motion.img
+                    className="cursor-pointer w-full h-full object-cover" // Ensure the image covers the container
+                    src={item.id === focusIndex ? item.srcFocus : item.src}
+                    alt={item.alt}
+                    whileHover={{ scale: 1.1 }} // Zoom into the image
+                    transition={{ type: "spring", stiffness: 300, damping: 20 }} // Smooth animation
+                  />
+                </div>
                 <p className="pt-4 text-sm">{item.title}</p>
                 <p
                   className="inline pt-2 text-sm"
