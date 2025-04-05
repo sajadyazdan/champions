@@ -103,7 +103,7 @@ const DiscoverSection = () => {
                 </div>
                 <p className="pt-4 text-sm">{item.title}</p>
                 <p
-                  className="inline pt-2 text-sm"
+                  className="inline my-1 text-sm"
                   style={{ display: "inline" }}
                 >
                   <span className="pr-1">
