@@ -2,6 +2,7 @@ import { useCallback, useState } from "react";
 import { motion } from "framer-motion"; // Import framer-motion
 import { Color } from "../../../constants";
 import ColorPicker from "../../SharedComponents/ColorPicker";
+import { CopyIcon, HeartIcon } from "../../../assets/icons";
 
 const ItemsList = [
   {
@@ -100,6 +101,10 @@ const DiscoverSection = () => {
                     whileHover={{ scale: 1.1 }} // Zoom into the image
                     transition={{ type: "spring", stiffness: 300, damping: 20 }} // Smooth animation
                   />
+                  <span className="absolute right-3 top-3 cursor-pointer">
+                    <HeartIcon className="w-8 h-8 z-10 text-black my-1" />
+                    <CopyIcon className="w-8 h-8 z-10 text-black" />
+                  </span>
                 </div>
                 <p className="pt-4 text-sm">{item.title}</p>
                 <p

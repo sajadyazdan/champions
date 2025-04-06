@@ -8,5 +8,6 @@ import ReloadIcon from "./reload.svg";
 import PersonIcon from "./person.svg";
 import * as FlagIcons from "./flags"
 import * as SocialMediaIcons from "./socialMedia"
+import CopyIcon from "./copy.svg"
 
-export { ArrowIcon, SearchIcon, CartIcon, HamburgerIcon, CloseIcon, HeartIcon, ReloadIcon, PersonIcon, FlagIcons, SocialMediaIcons };
+export { ArrowIcon, SearchIcon, CartIcon, HamburgerIcon, CloseIcon, HeartIcon, ReloadIcon, PersonIcon, FlagIcons, SocialMediaIcons, CopyIcon };
