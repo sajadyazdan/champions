@@ -57,6 +57,7 @@ const ItemsList = [
 const DiscoverSection = () => {
   const [focusIndex, setFocusIndex] = useState<number>(-1);
   const [colorIndex, setColorIndex] = useState<number[]>([0, 0, 0, 0]);
+  const [buttonsVisible, setButtonsVisible] = useState<boolean>(false);
   const [hoverColorIndex, setHoverColorIndex] = useState<number[]>([
     0, 0, 0, 0,
   ]);
@@ -74,6 +75,7 @@ const DiscoverSection = () => {
       return currentState;
     });
   }, []);
+  // const baseButtonsStyle = absolute right-3 top-3 cursor-pointer
   return (
     <section className="relative w-full flex pb-8 px-8 bg-white">
       <div className="flex flex-col text-left space-y-4">
@@ -85,7 +87,11 @@ const DiscoverSection = () => {
                 key={item.id}
                 className="flex-grow flex flex-col justify-center px-1 w-1/4"
               >
-                <div className="relative w-full h-auto overflow-hidden">
+                <div
+                  className="relative w-full h-auto overflow-hidden"
+                  onMouseEnter={() => setFocusIndex(item.id)}
+                  onMouseLeave={() => setFocusIndex(-1)}
+                >
                   {" "}
                   {/* Add container with overflow hidden */}
                   <motion.img
@@ -96,12 +102,14 @@ const DiscoverSection = () => {
                         : item.availableColors[hoverColorIndex[index]].src
                     }
                     alt={item.alt}
-                    onMouseEnter={() => setFocusIndex(item.id)}
-                    onMouseLeave={() => setFocusIndex(-1)}
                     whileHover={{ scale: 1.1 }} // Zoom into the image
                     transition={{ type: "spring", stiffness: 300, damping: 20 }} // Smooth animation
                   />
-                  <span className="absolute right-3 top-3 cursor-pointer">
+                  <span
+                    className={`absolute right-3 top-3 cursor-pointer ${
+                      focusIndex === item.id ? "visible" : "invisible"
+                    }`}
+                  >
                     <HeartIcon className="w-8 h-8 z-10 text-black my-1" />
                     <CopyIcon className="w-8 h-8 z-10 text-black" />
                   </span>
