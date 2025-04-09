@@ -78,9 +78,9 @@ const DiscoverSection = () => {
   // const baseButtonsStyle = absolute right-3 top-3 cursor-pointer
   return (
     <section className="relative w-full flex pb-8 px-8 bg-white">
-      <div className="flex flex-col text-left space-y-4">
-        <h2 className="text-3xl pb-4">Discover what's new</h2>
-        <div className="flex w-full justify-between box-border">
+      <div className="flex flex-col text-left">
+        <h2 className="text-3xl mb-8">Discover what's new</h2>
+        <div className="flex w-full justify-between box-border mb-12">
           {ItemsList.map((item, index) => {
             return (
               <article
@@ -139,6 +139,12 @@ const DiscoverSection = () => {
             );
           })}
         </div>
+        <button
+          className="w-48 h-16 self-center text-white text-lg mb-12 rounded-none"
+          style={{ backgroundColor: "rgb(16,16,16)" }}
+        >
+          VIEW ALL
+        </button>
       </div>
     </section>
   );
