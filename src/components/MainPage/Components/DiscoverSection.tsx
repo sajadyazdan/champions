@@ -18,6 +18,7 @@ const ItemsList = [
       { color: Color.GREY, src: "./images/product-1-grey.webp" },
       { color: Color.PEARL_PINK, src: "./images/product-1-pearlpink.webp" },
     ],
+    onSale: false,
   },
   {
     id: 2,
@@ -27,6 +28,7 @@ const ItemsList = [
     discount: 0,
     title: "PURE COTTON HEAVYWEIGHT T-SHIRT",
     availableColors: [{ color: Color.BEIGE, src: "./images/product-2-1.webp" }],
+    onSale: true,
   },
   {
     id: 3,
@@ -39,6 +41,7 @@ const ItemsList = [
       { color: Color.PEARL_PINK, src: "./images/product-3-1.webp" },
       { color: Color.BROWN, src: "./images/product-3-brown.webp" },
     ],
+    onSale: false,
   },
   {
     id: 4,
@@ -51,13 +54,13 @@ const ItemsList = [
       { color: Color.GREY, src: "./images/product-4-1.webp" },
       { color: Color.PINK, src: "./images/product-4-pink.webp" },
     ],
+    onSale: false,
   },
 ];
 
 const DiscoverSection = () => {
   const [focusIndex, setFocusIndex] = useState<number>(-1);
   const [colorIndex, setColorIndex] = useState<number[]>([0, 0, 0, 0]);
-  const [buttonsVisible, setButtonsVisible] = useState<boolean>(false);
   const [hoverColorIndex, setHoverColorIndex] = useState<number[]>([
     0, 0, 0, 0,
   ]);
@@ -75,7 +78,6 @@ const DiscoverSection = () => {
       return currentState;
     });
   }, []);
-  // const baseButtonsStyle = absolute right-3 top-3 cursor-pointer
   return (
     <section className="relative w-full flex pb-8 px-8 bg-white">
       <div className="flex flex-col text-left">
@@ -113,6 +115,11 @@ const DiscoverSection = () => {
                     <HeartIcon className="w-8 h-8 z-10 text-black my-1" />
                     <CopyIcon className="w-8 h-8 z-10 text-black" />
                   </span>
+                  {item.onSale && (
+                    <span className="absolute left-3 top-3 text-white bg-black border-2 border-black px-3 rounded-xl">
+                      Sale
+                    </span>
+                  )}
                 </div>
                 <p className="pt-4 text-sm">{item.title}</p>
                 <p
