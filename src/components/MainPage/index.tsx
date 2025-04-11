@@ -1,6 +1,7 @@
 import React from "react";
 import NewsTicker from "../NewsTicker/NewsTicker";
 import DiscoverSection from "./Components/DiscoverSection";
+import CollectionSection from "./Components/CollectionSection";
 
 const MainPage: React.FC = () => {
   return (
@@ -39,6 +40,7 @@ const MainPage: React.FC = () => {
         </div>
       </section>
       <DiscoverSection />
+      <CollectionSection />
       <section className="relative w-full flex justify-center items-center py-16 bg-[#efefef]">
         <div className="flex flex-col justify-center items-center text-center space-y-4 max-w-3xl">
           <p className="break-words">
