@@ -82,12 +82,12 @@ const DiscoverSection = () => {
     <section className="relative w-full flex pb-8 px-8 bg-white">
       <div className="flex flex-col text-left">
         <h2 className="text-3xl mb-8">Discover what's new</h2>
-        <div className="flex w-full justify-between box-border mb-12">
+        <div className="flex w-full justify-between box-border mb-12 flex-wrap">
           {ItemsList.map((item, index) => {
             return (
               <article
                 key={item.id}
-                className="flex-grow flex flex-col justify-center px-1 w-1/4"
+                className="flex-grow flex flex-col justify-center px-1 mb-4 w-full sm:w-1/2 lg:w-1/4"
               >
                 <div
                   className="relative w-full h-auto overflow-hidden"
