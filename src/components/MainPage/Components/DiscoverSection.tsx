@@ -64,6 +64,12 @@ const DiscoverSection = () => {
   const [hoverColorIndex, setHoverColorIndex] = useState<number[]>([
     0, 0, 0, 0,
   ]);
+  const [wishList, setWishList] = useState<boolean[]>([
+    false,
+    false,
+    false,
+    false,
+  ]);
   const onPick = useCallback((itemIndex: number, colorIndex: number) => {
     setColorIndex((prevState) => {
       const currentState = [...prevState];
@@ -76,6 +82,13 @@ const DiscoverSection = () => {
       const currentState = [...prevState];
       currentState[itemIndex] = colorIndex;
       return currentState;
+    });
+  }, []);
+  const onHeartIcon = useCallback((index: number) => {
+    setWishList((prevState) => {
+      const copyPrevState = [...prevState];
+      copyPrevState[index] = !copyPrevState[index];
+      return copyPrevState;
     });
   }, []);
   return (
@@ -112,8 +125,13 @@ const DiscoverSection = () => {
                       focusIndex === item.id ? "visible" : "invisible"
                     }`}
                   >
-                    <HeartIcon className="w-8 h-8 z-10 text-black my-1" />
-                    <CopyIcon className="w-8 h-8 z-10 text-black" />
+                    <HeartIcon
+                      className={`w-8 h-8 z-10 my-1 ${
+                        wishList[index] ? "fill-black" : "fill-white"
+                      }`}
+                      onClick={() => onHeartIcon(index)}
+                    />
+                    <CopyIcon className="w-8 h-8 z-10" />
                   </span>
                   {item.onSale && (
                     <span className="absolute left-3 top-3 text-white bg-black border-2 border-black px-3 rounded-xl">

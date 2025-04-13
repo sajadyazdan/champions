@@ -46,11 +46,11 @@ const Sidebar: React.FC<SidebarProps> = ({ isMenuOpen, setIsMenuOpen }) => {
                   key={item.id}
                   className="py-4 hover:bg-gray-200 px-10 p-2 cursor-pointer"
                 >
-                  <Link to="/" className="relative flex gap-x-1">
+                  <Link to="/" className="relative flex gap-x-1 self-center">
                     {item.icon}
                     {item.name}
                     {item.quantity ? (
-                      <span className="absolute bottom-full left-2 h-4 w-4 bg-black text-white text-xs flex items-center justify-center rounded-full">
+                      <span className="absolute bottom-4 left-2 h-4 w-4 bg-black text-white text-xs flex items-center justify-center rounded-full">
                         {item.quantity}
                       </span>
                     ) : null}

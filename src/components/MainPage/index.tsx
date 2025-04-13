@@ -40,8 +40,7 @@ const MainPage: React.FC = () => {
         </div>
       </section>
       <DiscoverSection />
-      <CollectionSection />
-      <section className="relative w-full flex justify-center items-center py-16 bg-[#efefef]">
+      <section className="relative w-full flex justify-center items-center py-16 bg-[#efefef] mb-10">
         <div className="flex flex-col justify-center items-center text-center space-y-4 max-w-3xl">
           <p className="break-words">
             Share information about your brand with your customers. Describe a
@@ -49,6 +48,7 @@ const MainPage: React.FC = () => {
           </p>
         </div>
       </section>
+      <CollectionSection />
     </main>
   );
 };
