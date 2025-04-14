@@ -92,7 +92,7 @@ const Header: React.FC<HeaderProps> = ({ isMenuOpen, setIsMenuOpen }) => {
       </div>
 
       {/* Right Section: Search and Cart */}
-      <div className="flex justify-end	 w-1/3 space-x-4">
+      <div className="flex justify-end w-1/3 space-x-4">
         {/* Search Icon */}
         <search className="text-gray-700">
           <div className="relative">
