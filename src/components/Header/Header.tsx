@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { motion } from "motion/react";
 import {
-  ArrowIcon,
+  GreaterIcon,
   SearchIcon,
   CartIcon,
   HamburgerIcon,
@@ -79,7 +79,7 @@ const Header: React.FC<HeaderProps> = ({ isMenuOpen, setIsMenuOpen }) => {
                 // whileHover="hover"
                 // whileTap="tap"
               >
-                <ArrowIcon className="w-3 h-3 ml-1" />
+                <GreaterIcon className="w-3 h-3 ml-1" />
               </motion.span>
             </motion.div>
           ))}

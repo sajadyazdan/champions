@@ -4,19 +4,19 @@ function CollectionSection() {
   const ItemsList = [
     {
       id: 1,
-      srcFocus: "./images/category-1.webp",
+      src: "./images/category-1.webp",
       alt: "category-1",
       caption: "BEST SELLER",
     },
     {
       id: 2,
-      srcFocus: "./images/category-2.webp",
+      src: "./images/category-2.webp",
       alt: "category-2",
       caption: "NEW ARRIVAL",
     },
     {
       id: 3,
-      srcFocus: "./images/category-3.webp",
+      src: "./images/category-3.webp",
       alt: "category-3",
       caption: "ACCESSORIES",
     },
@@ -37,12 +37,15 @@ function CollectionSection() {
                   {/* Add container with overflow hidden */}
                   <motion.img
                     className="cursor-pointer w-full h-full object-cover" // Ensure the image covers the container
-                    src={item.srcFocus}
+                    src={item.src}
                     alt={item.alt}
                     whileHover={{ scale: 1.1 }} // Zoom into the image
                     transition={{ type: "spring", stiffness: 300, damping: 20 }} // Smooth animation
                   />
                 </div>
+                <caption className="text-left after:content-['-->']">
+                  {item.caption}
+                </caption>
               </article>
             );
           })}

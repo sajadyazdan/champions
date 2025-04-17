@@ -1,4 +1,4 @@
-import ArrowIcon from "./arrow.svg";
+import GreaterIcon from "./greater.svg";
 import SearchIcon from "./search.svg";
 import CartIcon from "./cart.svg";
 import HamburgerIcon from "./hamburger.svg";
@@ -10,4 +10,4 @@ import * as FlagIcons from "./flags"
 import * as SocialMediaIcons from "./socialMedia"
 import CopyIcon from "./copy.svg"
 
-export { ArrowIcon, SearchIcon, CartIcon, HamburgerIcon, CloseIcon, HeartIcon, ReloadIcon, PersonIcon, FlagIcons, SocialMediaIcons, CopyIcon };
+export { GreaterIcon, SearchIcon, CartIcon, HamburgerIcon, CloseIcon, HeartIcon, ReloadIcon, PersonIcon, FlagIcons, SocialMediaIcons, CopyIcon };

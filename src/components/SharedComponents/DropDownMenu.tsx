@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useRef } from "react";
-import { ArrowIcon } from "../../assets/icons";
+import { GreaterIcon } from "../../assets/icons";
 import { motion } from "motion/react";
 
 interface DropDownMenuProps {
@@ -75,7 +75,7 @@ const DropDownMenu: React.FC<DropDownMenuProps> = ({
           animate={{ rotate: isOpen ? 180 : 0 }}
           transition={{ duration: 0.3 }}
         >
-          <ArrowIcon className="w-4 h-4 self-center" />
+          <GreaterIcon className="w-4 h-4 self-center" />
         </motion.span>
       </span>
       {isOpen && (
