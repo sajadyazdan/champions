@@ -1,4 +1,6 @@
 import { motion } from "motion/react";
+import { Link } from "react-router";
+import { ArrowIcon } from "../../../assets/icons";
 
 function CollectionSection() {
   const ItemsList = [
@@ -32,7 +34,7 @@ function CollectionSection() {
                 key={item.id}
                 className="flex-grow flex flex-col justify-center px-1 mb-4 w-full lg:w-1/3"
               >
-                <div className="relative w-full h-auto overflow-hidden">
+                <div className="relative w-full h-auto overflow-hidden mb-2">
                   {" "}
                   {/* Add container with overflow hidden */}
                   <motion.img
@@ -43,9 +45,13 @@ function CollectionSection() {
                     transition={{ type: "spring", stiffness: 300, damping: 20 }} // Smooth animation
                   />
                 </div>
-                <caption className="text-left after:content-['-->']">
+                <Link
+                  to="/"
+                  className="flex flex-row items-center gap-x-2 text-left"
+                >
                   {item.caption}
-                </caption>
+                  <ArrowIcon className="w-4 h-4" />
+                </Link>
               </article>
             );
           })}
