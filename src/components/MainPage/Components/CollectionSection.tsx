@@ -23,6 +23,16 @@ function CollectionSection() {
       caption: "ACCESSORIES",
     },
   ];
+  const imageVariants = {
+    initial: { scale: 1 },
+    hover: { scale: 1.1 },
+  };
+
+  const captionVariants = {
+    initial: { scale: 1 },
+    hover: { scaleX: 1.2 },
+  };
+
   return (
     <section className="relative w-full flex pb-8 px-8 bg-white">
       <div className="flex flex-col text-left">
@@ -30,9 +40,11 @@ function CollectionSection() {
         <div className="flex w-full justify-between box-border mb-12 flex-wrap">
           {ItemsList.map((item) => {
             return (
-              <article
+              <motion.article
                 key={item.id}
                 className="flex-grow flex flex-col justify-center px-1 mb-4 w-full lg:w-1/3"
+                initial="initial"
+                whileHover="hover"
               >
                 <div className="relative w-full h-auto overflow-hidden mb-2">
                   {" "}
@@ -41,8 +53,7 @@ function CollectionSection() {
                     className="cursor-pointer w-full h-full object-cover" // Ensure the image covers the container
                     src={item.src}
                     alt={item.alt}
-                    whileHover={{ scale: 1.1 }} // Zoom into the image
-                    transition={{ type: "spring", stiffness: 300, damping: 20 }} // Smooth animation
+                    variants={imageVariants}
                   />
                 </div>
                 <Link
@@ -50,9 +61,15 @@ function CollectionSection() {
                   className="flex flex-row items-center gap-x-2 text-left"
                 >
                   {item.caption}
-                  <ArrowIcon className="w-4 h-4" />
+                  <motion.span
+                    className="flex items-center w-4 h-4"
+                    variants={captionVariants}
+                    style={{ transformOrigin: "left" }}
+                  >
+                    <ArrowIcon />{" "}
+                  </motion.span>
                 </Link>
-              </article>
+              </motion.article>
             );
           })}
         </div>
