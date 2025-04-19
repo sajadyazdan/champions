@@ -3,6 +3,7 @@ import NewsTicker from "../NewsTicker/NewsTicker";
 import DiscoverSection from "./Components/DiscoverSection";
 import CollectionSection from "./Components/CollectionSection";
 import SliderSection from "./Components/SliderSection";
+import BestSellerSection from "./Components/BestSellerSection";
 
 const MainPage: React.FC = () => {
   return (
@@ -29,6 +30,7 @@ const MainPage: React.FC = () => {
         </div>
       </section>
       <CollectionSection />
+      <BestSellerSection />
     </main>
   );
 };
