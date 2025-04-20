@@ -1,3 +1,5 @@
+import { GreaterIcon } from "../../../assets/icons";
+
 function SliderSection() {
   return (
     <section className="relative w-full">
@@ -27,6 +29,14 @@ function SliderSection() {
               WOMENS
             </button>
           </div>
+        </div>
+        <div className="flex absolute z-20 bottom-10 right-10">
+          <span className="flex w-12 h-12 rounded-full justify-center bg-white items-center cursor-pointer rotate-90 border-2">
+            <GreaterIcon className="w-6 h-6" />
+          </span>
+          <span className="flex w-12 h-12 rounded-full justify-center bg-white items-center cursor-pointer -rotate-90 border-2">
+            <GreaterIcon className="w-6 h-6" />
+          </span>
         </div>
       </div>
     </section>
