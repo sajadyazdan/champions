@@ -30,12 +30,16 @@ function SliderSection() {
             </button>
           </div>
         </div>
-        <div className="flex absolute z-20 bottom-10 right-10">
+        <div className="flex absolute z-20 bottom-10 right-10 gap-x-1">
           <span className="flex w-12 h-12 rounded-full justify-center bg-white items-center cursor-pointer rotate-90 border-2">
-            <GreaterIcon className="w-6 h-6" />
+            <i className="flex w-5 h-5 justify-center">
+              <GreaterIcon />
+            </i>
           </span>
           <span className="flex w-12 h-12 rounded-full justify-center bg-white items-center cursor-pointer -rotate-90 border-2">
-            <GreaterIcon className="w-6 h-6" />
+            <i className="flex w-5 h-5 justify-center">
+              <GreaterIcon />
+            </i>
           </span>
         </div>
       </div>
