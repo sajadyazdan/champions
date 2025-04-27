@@ -75,7 +75,7 @@ const SharedDiscoverBestSeller: React.FC<IProps> = ({
                   <motion.img
                     className="cursor-pointer w-full h-full object-cover" // Ensure the image covers the container
                     src={
-                      item.id === focusIndex
+                      item.id === focusIndex && colorIndex[item.id - 1] === 0
                         ? item.srcFocus
                         : item.availableColors[hoverColorIndex[index]].src
                     }
