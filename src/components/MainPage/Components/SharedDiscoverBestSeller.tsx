@@ -102,27 +102,30 @@ const SharedDiscoverBestSeller: React.FC<IProps> = ({
                     </span>
                   )}
                 </div>
-                <p className="pt-4 text-sm">{item.title}</p>
-                <p
-                  className="inline my-1 text-sm"
-                  style={{ display: "inline" }}
-                >
-                  <span className="pr-1">
-                    From $
-                    {(item.price - (item.price * item.discount) / 100).toFixed(
-                      2
+                <div className="flex flex-col pt-4 text-left min-h-[120px]">
+                  <p className="pt-4 text-sm">{item.title}</p>
+                  <p
+                    className="inline my-1 text-sm"
+                    style={{ display: "inline" }}
+                  >
+                    <span className="pr-1">
+                      From $
+                      {(
+                        item.price -
+                        (item.price * item.discount) / 100
+                      ).toFixed(2)}
+                    </span>
+                    {Boolean(item.discount) && (
+                      <span className="line-through"> ${item.price}</span>
                     )}
-                  </span>
-                  {Boolean(item.discount) && (
-                    <span className="line-through"> ${item.price}</span>
-                  )}
-                </p>{" "}
-                <ColorPicker
-                  colorList={item.availableColors.map((item) => item.color)}
-                  onPick={(colorIndex: number) => onPick(index, colorIndex)}
-                  onHover={(colorIndex: number) => onHover(index, colorIndex)}
-                  selectedColor={colorIndex[index]}
-                />
+                  </p>{" "}
+                  <ColorPicker
+                    colorList={item.availableColors.map((item) => item.color)}
+                    onPick={(colorIndex: number) => onPick(index, colorIndex)}
+                    onHover={(colorIndex: number) => onHover(index, colorIndex)}
+                    selectedColor={colorIndex[index]}
+                  />
+                </div>
               </article>
             );
           })}
