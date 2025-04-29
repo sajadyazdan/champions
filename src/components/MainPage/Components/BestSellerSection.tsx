@@ -26,7 +26,7 @@ const ItemsList = [
     availableColors: [
       { color: Color.SOFT_PINK, src: "./images/product-18.webp" },
     ],
-    onSale: true,
+    specialTag: "Sold out",
   },
   {
     id: 3,
@@ -36,7 +36,7 @@ const ItemsList = [
     discount: 20,
     title: "GIRLS SOLID ROUND NECK YELLOW SWEATER",
     availableColors: [{ color: Color.YELLOW, src: "./images/product-19.webp" }],
-    onSale: false,
+    specialTag: "Sale",
   },
   {
     id: 4,

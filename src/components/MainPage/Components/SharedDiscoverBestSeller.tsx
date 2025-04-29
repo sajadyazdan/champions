@@ -13,7 +13,7 @@ interface IProps {
     discount: number;
     title: string;
     availableColors: { color: Color; src: string }[];
-    onSale: boolean;
+    specialTag?: string;
   }[];
   displayButton?: boolean;
 }
@@ -80,7 +80,7 @@ const SharedDiscoverBestSeller: React.FC<IProps> = ({
                         : item.availableColors[hoverColorIndex[index]].src
                     }
                     alt={item.alt}
-                    whileHover={{ scale: 1.1 }} // Zoom into the image
+                    whileHover={{ scale: 1.05 }} // Zoom into the image
                     transition={{ type: "spring", stiffness: 300, damping: 20 }} // Smooth animation
                   />
                   <span
@@ -96,9 +96,9 @@ const SharedDiscoverBestSeller: React.FC<IProps> = ({
                     />
                     <CopyIcon className="w-8 h-8 z-10" />
                   </span>
-                  {item.onSale && (
+                  {item?.specialTag && (
                     <span className="absolute left-3 top-3 text-white bg-black border-2 border-black px-3 rounded-xl">
-                      Sale
+                      {item?.specialTag}
                     </span>
                   )}
                 </div>

@@ -15,7 +15,6 @@ const ItemsList = [
       { color: Color.GREY, src: "./images/product-1-grey.webp" },
       { color: Color.PEARL_PINK, src: "./images/product-1-pearlpink.webp" },
     ],
-    onSale: false,
   },
   {
     id: 2,
@@ -25,7 +24,7 @@ const ItemsList = [
     discount: 0,
     title: "PURE COTTON HEAVYWEIGHT T-SHIRT",
     availableColors: [{ color: Color.BEIGE, src: "./images/product-2-1.webp" }],
-    onSale: true,
+    specialTag: "Sale",
   },
   {
     id: 3,
@@ -38,7 +37,6 @@ const ItemsList = [
       { color: Color.PEARL_PINK, src: "./images/product-3-1.webp" },
       { color: Color.BROWN, src: "./images/product-3-brown.webp" },
     ],
-    onSale: false,
   },
   {
     id: 4,
@@ -51,7 +49,6 @@ const ItemsList = [
       { color: Color.GREY, src: "./images/product-4-1.webp" },
       { color: Color.PINK, src: "./images/product-4-pink.webp" },
     ],
-    onSale: false,
   },
 ];
 
