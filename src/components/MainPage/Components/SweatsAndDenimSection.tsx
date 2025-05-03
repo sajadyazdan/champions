@@ -18,9 +18,9 @@ const items = [
 const SweatsAndDenimSection = () => {
   return (
     <div>
-      {items.map((item) => (
-        <div key={item.id} className="grid grid-cols-2 gap-4 p-10">
-          <div>
+      {items.map((item, index) => (
+        <div key={item.id} className="grid grid-cols-2 gap-y-4 px-10">
+          <div className={`${index % 2 !== 0 ? "order-last" : ""}`}>
             <img src={item.src} alt={item.title} />
           </div>
           <div className="flex flex-col justify-center items-center">
