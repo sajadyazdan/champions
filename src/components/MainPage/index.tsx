@@ -5,6 +5,7 @@ import CollectionSection from "./Components/CollectionSection";
 import SliderSection from "./Components/SliderSection";
 import BestSellerSection from "./Components/BestSellerSection";
 import SweatsAndDenimSection from "./Components/SweatsAndDenimSection";
+import LatestNewsSection from "./Components/LatestNewsSection";
 
 const MainPage: React.FC = () => {
   return (
@@ -33,6 +34,7 @@ const MainPage: React.FC = () => {
       <CollectionSection />
       <BestSellerSection />
       <SweatsAndDenimSection />
+      <LatestNewsSection />
     </main>
   );
 };

@@ -17,7 +17,7 @@ const items = [
 
 const SweatsAndDenimSection = () => {
   return (
-    <div>
+    <div className="mb-10">
       {items.map((item, index) => (
         <div key={item.id} className="grid grid-cols-2 gap-y-4 px-10">
           <div className={`${index % 2 !== 0 ? "order-last" : ""}`}>
