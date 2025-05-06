@@ -19,13 +19,16 @@ const SweatsAndDenimSection = () => {
   return (
     <div className="mb-10">
       {items.map((item, index) => (
-        <div key={item.id} className="grid grid-cols-2 gap-y-4 px-10">
-          <div className={`${index % 2 !== 0 ? "order-last" : ""}`}>
+        <div
+          key={item.id}
+          className="grid grid-cols-1 lg:grid-cols-2 gap-y-4 px-10"
+        >
+          <div className={`${index % 2 !== 0 ? "lg:order-last" : ""}`}>
             <img src={item.src} alt={item.title} />
           </div>
           <div className="flex flex-col justify-center items-center">
             <h2 className="mb-4">{item.title}</h2>
-            <p className="w-2/3 mb-8">{item.description}</p>
+            <p className="w-full lg:w-2/3 mb-8">{item.description}</p>
             <button
               className="w-48 h-16 self-center text-white text-lg mb-12 rounded-none"
               style={{ backgroundColor: "rgb(16,16,16)" }}
