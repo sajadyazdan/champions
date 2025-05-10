@@ -60,10 +60,15 @@ const LatestNewsSection = () => {
               </div>
 
               <div className="flex flex-col">
-                <motion.h3 className="mb-4" variants={titleVariants}>
+                <motion.h3
+                  className="mb-4 text-[rgb(16,16,16)]"
+                  variants={titleVariants}
+                >
                   {item.title}
                 </motion.h3>
-                <p className="line-clamp-4">{item.text}</p>
+                <p className="line-clamp-4 text-[rgba(16,16,16,0.75)]">
+                  {item.text}
+                </p>
               </div>
             </motion.div>
           ))}
