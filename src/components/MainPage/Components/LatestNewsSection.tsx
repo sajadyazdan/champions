@@ -26,13 +26,13 @@ const parentVariants = {
 };
 
 const childVariants = {
-  hover: { scale: 1.025 },
-  initial: { scale: 1 },
+  hover: { scale: 1.025, transition: { duration: 0.3 } },
+  initial: { scale: 1, transition: { duration: 0.3 } },
 };
 
 const titleVariants = {
-  hover: { textDecoration: "underline" },
-  initial: { textDecoration: "none" },
+  hover: { textDecoration: "underline", transition: { duration: 0.3 } },
+  initial: { textDecoration: "none", transition: { duration: 0.3 } },
 };
 
 const LatestNewsSection = () => {
