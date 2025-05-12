@@ -44,7 +44,7 @@ const LatestNewsSection = () => {
     >
       <div className="flex flex-col text-left">
         <h2 className="text-3xl mb-8">Latest news</h2>
-        <div className="grid grid-cols-3 gap-x-1">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-1">
           {items.map((item) => (
             <motion.div
               key={item.id}
@@ -66,7 +66,7 @@ const LatestNewsSection = () => {
                 >
                   {item.title}
                 </motion.h3>
-                <p className="line-clamp-4 text-[rgba(16,16,16,0.75)]">
+                <p className="mb-10 ld:mb-0 line-clamp-4 text-[rgba(16,16,16,0.75)]">
                   {item.text}
                 </p>
               </div>
