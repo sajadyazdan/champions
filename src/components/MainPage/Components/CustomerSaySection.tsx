@@ -18,9 +18,10 @@ const CustomerSaySection = () => {
             <div key={item.id} className="flex flex-col border-1">
               <div className="mb-6 overflow-hidden w-1/3">
                 <img
-                  className="h-full w-auto object-cover"
                   src={item.src}
                   alt={item.name}
+                  className="h-auto object-none object-right"
+                  style={{ maxWidth: "none" }}
                 />
               </div>
             </div>
