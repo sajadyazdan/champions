@@ -1,3 +1,5 @@
+import { CheckMark } from "../../../assets/icons";
+
 const items = [
   {
     id: 1,
@@ -38,10 +40,27 @@ const CustomerSaySection = () => {
                   style={{ maxWidth: "none" }}
                 />
               </div>
-              <div className="flex flex-col w-2/3">
+              <div className="flex flex-col w-2/3 p-10">
+                <img
+                  src="images/icon-review-5stars.svg"
+                  className="w-[78px] mb-2"
+                />
                 <h3>Brayton</h3>
-                <p>Verified Buyer</p>
-                <p>{item.comment}</p>
+                <p className="flex items-center justify-start mb-6">
+                  <CheckMark className="mr-2" />
+                  <span
+                    className="italic"
+                    style={{ color: "rgba(16,16,16,0.75)" }}
+                  >
+                    Verified Buyer
+                  </span>
+                </p>
+                <p
+                  className="text-md leading-[1.8]"
+                  style={{ color: "rgba(16,16,16,0.75)" }}
+                >
+                  {item.comment}
+                </p>
               </div>
             </div>
           ))}

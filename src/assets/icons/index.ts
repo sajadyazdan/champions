@@ -10,5 +10,6 @@ import * as FlagIcons from "./flags"
 import * as SocialMediaIcons from "./socialMedia"
 import CopyIcon from "./copy.svg"
 import ArrowIcon from "./arrow.svg"
+import CheckMark from "./check-mark.svg"
 
-export { GreaterIcon, SearchIcon, CartIcon, HamburgerIcon, CloseIcon, HeartIcon, ReloadIcon, PersonIcon, FlagIcons, SocialMediaIcons, CopyIcon, ArrowIcon };
+export { GreaterIcon, SearchIcon, CartIcon, HamburgerIcon, CloseIcon, HeartIcon, ReloadIcon, PersonIcon, FlagIcons, SocialMediaIcons, CopyIcon, ArrowIcon, CheckMark };
