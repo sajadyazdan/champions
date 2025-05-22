@@ -10,17 +10,17 @@ const items = [
   },
   {
     id: 2,
-    src: "images/testimonial-img-1.webp",
-    name: "Brayton",
+    src: "images/a91051ab6c3645349b800b9d3d9d5dfe.mp4",
+    name: "Aleena",
     comment:
-      "A fantastic purchase! The product provides just the right amount of warmth without causing overheating. Highly recommend! 😊",
+      "These are so pretty and very comfy. Perfect color as well. I love wearing these with a neutral top. Wicked cute...😍",
   },
   {
     id: 3,
-    src: "images/testimonial-img-1.webp",
-    name: "Brayton",
+    src: "images/testimonial-img-2.webp",
+    name: "Amina",
     comment:
-      "A fantastic purchase! The product provides just the right amount of warmth without causing overheating. Highly recommend! 😊",
+      "A perfect product, it keeps you very warm without over heating. True to size, I couldn't be happier with the purchase...🤗",
   },
 ];
 
@@ -33,12 +33,20 @@ const CustomerSaySection = () => {
           {items.map((item) => (
             <div key={item.id} className="flex flex-row border-1">
               <div className="mb-6 overflow-hidden w-1/3">
-                <img
-                  src={item.src}
-                  alt={item.name}
-                  className="h-auto object-none object-right"
-                  style={{ maxWidth: "none" }}
-                />
+                {item.src.endsWith(".mp4") ? (
+                  <video
+                    src={item.src}
+                    controls
+                    className="h-auto w-full object-cover"
+                  />
+                ) : (
+                  <img
+                    src={item.src}
+                    alt={item.name}
+                    className="h-auto object-none object-right"
+                    style={{ maxWidth: "none" }}
+                  />
+                )}
               </div>
               <div className="flex flex-col w-2/3 p-10">
                 <img
