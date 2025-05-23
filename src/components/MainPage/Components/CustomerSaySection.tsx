@@ -35,10 +35,13 @@ const CustomerSaySection = () => {
               <div className="mb-6 overflow-hidden w-1/3">
                 {item.src.endsWith(".mp4") ? (
                   <video
-                    src={item.src}
-                    controls
-                    className="h-auto w-full object-cover"
-                  />
+                    className="h-full w-full object-cover"
+                    autoPlay
+                    loop
+                    muted
+                  >
+                    <source src={item.src} type="video/mp4"></source>
+                  </video>
                 ) : (
                   <img
                     src={item.src}
