@@ -1,3 +1,4 @@
+import { motion } from "motion/react";
 import { CheckMark } from "../../../assets/icons";
 
 const items = [
@@ -43,11 +44,13 @@ const CustomerSaySection = () => {
                     <source src={item.src} type="video/mp4"></source>
                   </video>
                 ) : (
-                  <img
+                  <motion.img
                     src={item.src}
                     alt={item.name}
-                    className="h-auto object-none object-right"
+                    className="h-auto object-cover object-center"
                     style={{ maxWidth: "none" }}
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ duration: 0.3 }}
                   />
                 )}
               </div>
